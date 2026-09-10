@@ -1,0 +1,28 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+img, picture, svg, video {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button { cursor: pointer; border: none; background: none; }
+
+a { text-decoration: none; color: inherit; }
+
+ul, ol { list-style: none; }
+
+fieldset { border: none; }
+
+legend { display: contents; }
