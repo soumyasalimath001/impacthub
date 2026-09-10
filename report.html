@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Report a community issue in 30 seconds on ImpactHub." />
+  <meta name="theme-color" content="#0f766e" />
+  <title>Report an Issue · ImpactHub</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="ImpactHub home">
+        <span class="logo-mark" aria-hidden="true">◆</span> ImpactHub
+      </a>
+      <button class="menu-trigger" popovertarget="mobile-menu" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="issues.html">Issues</a>
+        <a href="report.html" class="btn btn-sm btn-primary is-active">Report Issue</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="mobile-menu" popover class="popover-menu">
+    <button class="popover-close" popovertarget="mobile-menu" popovertargetaction="hide" aria-label="Close menu">✕</button>
+    <p class="popover-title">Menu</p>
+    <nav class="popover-nav" aria-label="Mobile navigation">
+      <a href="index.html">🏠 Home</a>
+      <a href="issues.html">📋 Browse Issues</a>
+      <a href="report.html">➕ Report Issue</a>
+      <a href="index.html#about">ℹ️ How It Works</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <p class="section-eyebrow">30 seconds is all it takes</p>
+        <h1>Report an Issue</h1>
+        <p class="page-subtitle">
+          Your report helps your whole community. Please be as specific as possible.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-container">
+
+        <form class="report-form" id="report-form" novalidate>
+
+          <!-- Step 1: Category -->
+          <fieldset class="form-section">
+            <legend>
+              <span class="step-num-sm" aria-hidden="true">1</span>
+              What kind of issue is it?
+            </legend>
+            <div class="category-grid">
+              <label class="category-option">
+                <input type="radio" name="category" value="roads" required />
+                <span class="category-icon">🛣️</span>
+                <span class="category-name">Roads</span>
+              </label>
+              <label class="category-option">
+                <input type="radio" name="category" value="sanitation" required />
+                <span class="category-icon">🗑️</span>
+                <span class="category-name">Sanitation</span>
+              </label>
+              <label class="category-option">
+                <input type="radio" name="category" value="streetlights" required />
+                <span class="category-icon">💡</span>
+                <span class="category-name">Streetlights</span>
+              </label>
+              <label class="category-option">
+                <input type="radio" name="category" value="water" required />
+                <span class="category-icon">💧</span>
+                <span class="category-name">Water</span>
+              </label>
+              <label class="category-option">
+                <input type="radio" name="category" value="parks" required />
+                <span class="category-icon">🌳</span>
+                <span class="category-name">Parks</span>
+              </label>
+              <label class="category-option">
+                <input type="radio" name="category" value="safety" required />
+                <span class="category-icon">🚨</span>
+                <span class="category-name">Safety</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Step 2: Details -->
+          <fieldset class="form-section">
+            <legend>
+              <span class="step-num-sm" aria-hidden="true">2</span>
+              Tell us about it
+            </legend>
+
+            <div class="field">
+              <label for="title">Issue title <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="title" name="title" required maxlength="80"
+                     placeholder="e.g., Pothole on Main Street" autocomplete="off" />
+            </div>
+
+            <div class="field">
+              <label for="location">Location <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="location" name="location" required
+                     placeholder="Street, area, or landmark" autocomplete="street-address" />
+            </div>
+
+            <div class="field">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" rows="4"
+                        placeholder="What's happening? How long has it been like this?"
+                        maxlength="500"></textarea>
+              <span class="field-hint" id="desc-hint">Max 500 characters</span>
+            </div>
+          </fieldset>
+
+          <!-- Step 3: Evidence -->
+          <fieldset class="form-section">
+            <legend>
+              <span class="step-num-sm" aria-hidden="true">3</span>
+              Add evidence
+            </legend>
+
+            <div class="field">
+              <label for="photo">Photo (optional)</label>
+              <label class="file-upload" for="photo">
+                <span class="file-upload-icon" aria-hidden="true">📷</span>
+                <span class="file-upload-text">Tap to take or upload a photo</span>
+              </label>
+              <input type="file" id="photo" name="photo" accept="image/*" capture="environment" hidden />
+              <span class="field-hint">JPG, PNG — up to 5MB</span>
+            </div>
+
+            <div class="field field-checkbox">
+              <input type="checkbox" id="urgent" name="urgent" />
+              <label for="urgent">
+                ⚠️ This is urgent — there's a safety risk
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Submit -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit-btn">
+              Submit Report
+            </button>
+            <p class="form-footnote">
+              By submitting, you agree to keep your report factual and civil.
+            </p>
+          </div>
+
+        </form>
+
+        <!-- Success message -->
+        <div class="success-box" id="success-box" hidden role="status">
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h2>Report submitted!</h2>
+          <p>Thank you for making your community better. You'll be notified when there's an update.</p>
+          <a href="issues.html" class="btn btn-primary">View All Issues</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo"><span class="logo-mark" aria-hidden="true">◆</span> ImpactHub</p>
+        <p class="footer-tag">Civic-tech built responsively · DecodeLabs Project 2</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="issues.html">Issues</a>
+        <a href="report.html">Report</a>
+      </nav>
+      <p class="footer-copy">© 2026 ImpactHub</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

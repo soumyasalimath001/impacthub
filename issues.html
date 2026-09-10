@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse all community-reported issues on ImpactHub. Filter by category and status." />
+  <meta name="theme-color" content="#0f766e" />
+  <title>Browse Issues · ImpactHub</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="ImpactHub home">
+        <span class="logo-mark" aria-hidden="true">◆</span> ImpactHub
+      </a>
+      <button class="menu-trigger" popovertarget="mobile-menu" aria-label="Open navigation menu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="issues.html" class="is-active">Issues</a>
+        <a href="report.html" class="btn btn-sm btn-primary">Report Issue</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="mobile-menu" popover class="popover-menu">
+    <button class="popover-close" popovertarget="mobile-menu" popovertargetaction="hide" aria-label="Close menu">✕</button>
+    <p class="popover-title">Menu</p>
+    <nav class="popover-nav" aria-label="Mobile navigation">
+      <a href="index.html">🏠 Home</a>
+      <a href="issues.html">📋 Browse Issues</a>
+      <a href="report.html">➕ Report Issue</a>
+      <a href="index.html#about">ℹ️ How It Works</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <p class="section-eyebrow">Community reports</p>
+        <h1>Browse Issues</h1>
+        <p class="page-subtitle">
+          Filter by category or status to find what matters to you. Upvote to boost visibility.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Filter chips -->
+        <div class="filter-bar" role="group" aria-label="Filter issues">
+          <div class="filter-group">
+            <span class="filter-label">Category:</span>
+            <button class="chip is-active" data-filter-category="all" type="button">All</button>
+            <button class="chip" data-filter-category="roads" type="button">🛣️ Roads</button>
+            <button class="chip" data-filter-category="sanitation" type="button">🗑️ Sanitation</button>
+            <button class="chip" data-filter-category="streetlights" type="button">💡 Lights</button>
+            <button class="chip" data-filter-category="water" type="button">💧 Water</button>
+            <button class="chip" data-filter-category="parks" type="button">🌳 Parks</button>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Status:</span>
+            <button class="chip is-active" data-filter-status="all" type="button">All</button>
+            <button class="chip" data-filter-status="pending" type="button">Pending</button>
+            <button class="chip" data-filter-status="progress" type="button">In Progress</button>
+            <button class="chip" data-filter-status="resolved" type="button">Resolved</button>
+          </div>
+        </div>
+
+        <p class="results-count" id="results-count" aria-live="polite">Showing all 8 issues</p>
+
+        <!-- Issue grid -->
+        <div class="card-grid" id="issues-grid">
+
+          <article class="card" data-category="roads" data-status="pending">
+            <div class="card-media">
+              <img src="images/pothole.jpg" alt="Pothole" loading="lazy" />
+              <span class="badge badge-pending">Pending</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">🛣️ Roads</span>
+              <h3 class="card-title">Large pothole on MG Road</h3>
+              <p class="card-meta">📍 Sector 12 · 2 hours ago · 34 upvotes</p>
+              <button class="btn btn-card" type="button">Upvote &amp; View</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="sanitation" data-status="progress">
+            <div class="card-media">
+              <img src="images/garbage.jpg" alt="Garbage" loading="lazy" />
+              <span class="badge badge-progress">In Progress</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">🗑️ Sanitation</span>
+              <h3 class="card-title">Garbage not collected for 5 days</h3>
+              <p class="card-meta">📍 Green Park · 1 day ago · 89 upvotes</p>
+              <button class="btn btn-card" type="button">Upvote &amp; View</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="streetlights" data-status="resolved">
+            <div class="card-media">
+              <img src="images/streetlight.jpg" alt="Streetlight" loading="lazy" />
+              <span class="badge badge-resolved">Resolved</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">💡 Streetlights</span>
+              <h3 class="card-title">Streetlight out for 2 weeks</h3>
+              <p class="card-meta">📍 Lake View · 3 days ago · 52 upvotes</p>
+              <button class="btn btn-card" type="button">Upvote &amp; View</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="water" data-status="pending">
+            <div class="card-media">
+              <img src="images/water-leak.jpg" alt="Water leak" loading="lazy" />
+              <span class="badge badge-pending">Pending</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">💧 Water</span>
+              <h3 class="card-title">Water pipeline leaking</h3>
+              <p class="card-meta">📍 Old Town · 5 hours ago · 27 upvotes</p>
+              <button class="btn btn-card" type="button">Upvote &amp; View</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="parks" data-status="progress">
+            <div class="card-media">
+              <img src="images/bench.jpg" alt="Park bench" loading="lazy" />
+              <span class="badge badge-progress">In Progress</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">🌳 Parks</span>
+              <h3 class="card-title">Broken park bench</h3>
+              <p class="card-meta">📍 Central Park · 2 days ago · 18 upvotes</p>
+              <button class="btn btn-card" type="button">Upvote &amp; View</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="roads" data-status="resolved">
+            <div class="card-media">
+              <img src="images/signal.jpg" alt="Traffic signal" loading="lazy" />
+              <span class="badge badge-resolved">Resolved</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">🚨 Safety</span>
+              <h3 class="card-title">Damaged traffic signal</h3>
+              <p class="card-meta">📍 Ring Road · 5 days ago · 112 upvotes</p>
+              <button class="btn btn-card" type="button">Upvote &amp; View</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="sanitation" data-status="pending">
+            <div class="card-media">
+              <img src="images/garbage.jpg" alt="Waste dump" loading="lazy" />
+              <span class="badge badge-pending">Pending</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">🗑️ Sanitation</span>
+              <h3 class="card-title">Illegal waste dumping</h3>
+              <p class="card-meta">📍 Riverside · 12 hours ago · 41 upvotes</p>
+              <button class="btn btn-card" type="button">Upvote &amp; View</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="streetlights" data-status="progress">
+            <div class="card-media">
+              <img src="images/streetlight.jpg" alt="Dark street" loading="lazy" />
+              <span class="badge badge-progress">In Progress</span>
+            </div>
+            <div class="card-body">
+              <span class="card-category">💡 Streetlights</span>
+              <h3 class="card-title">3 lights out on lane 4</h3>
+              <p class="card-meta">📍 Hill Road · 6 days ago · 30 upvotes</p>
+              <button class="btn btn-card" type="button">Upvote &amp; View</button>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="empty-state" id="empty-state" hidden>
+          🔍 No issues match your filters. Try a different combination.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo"><span class="logo-mark" aria-hidden="true">◆</span> ImpactHub</p>
+        <p class="footer-tag">Civic-tech built responsively · DecodeLabs Project 2</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="issues.html">Issues</a>
+        <a href="report.html">Report</a>
+      </nav>
+      <p class="footer-copy">© 2026 ImpactHub</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
